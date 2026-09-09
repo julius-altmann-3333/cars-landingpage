@@ -1,0 +1,136 @@
+
+/* ==========================================================
+   CAR SALES LANDING PAGE
+   Prefix: cs-  |  All components are namespaced to avoid conflicts.
+   ========================================================== */
+
+:root {
+  --cs-bg: #f5f4f0;
+  --cs-dark: #111214;
+  --cs-muted: #777b80;
+  --cs-line: rgba(17,18,20,.12);
+  --cs-accent: #e1ff00;
+  --cs-radius: 22px;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cs-bg); color: var(--cs-dark); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; }
+.cs-section { position: relative; isolation: isolate; overflow: clip; }
+.cs-navbar { background: rgba(12,13,15,.96); }
+.cs-brand { font-weight: 900; letter-spacing: .1em; }
+.cs-brand span { color: var(--cs-accent); }
+.cs-navbar .nav-link { color: rgba(255,255,255,.76); }
+.cs-navbar .nav-link:hover, .cs-navbar .nav-link:focus { color: #fff; }
+.cs-language-btn { border: 1px solid rgba(255,255,255,.35); color: #fff; background: transparent; }
+
+.cs-hero-section {
+  min-height: 75vh;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.30)),
+    url("https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2200&q=90") center/cover no-repeat;
+}
+.cs-hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at 75% 35%, transparent, rgba(0,0,0,.35)); }
+.min-vh-75 { min-height: 75vh; }
+.cs-eyebrow { font-size: .75rem; font-weight: 800; letter-spacing: .14em; color: #777; }
+.cs-hero-section .cs-eyebrow { color: var(--cs-accent); }
+.cs-hero-section h1 span { color: var(--cs-accent); }
+.cs-price-card { background: rgba(255,255,255,.95); padding: 2rem; border-radius: var(--cs-radius); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.cs-price-card small { display: block; color: #777; font-size: .72rem; letter-spacing: .08em; }
+.cs-price { font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1; font-weight: 900; margin: .4rem 0 1rem; }
+.cs-price-card .row span { display: block; font-weight: 800; }
+.cs-price-card .row small { margin-top: .2rem; }
+
+.cs-section-heading h2 { font-size: clamp(2rem, 4vw, 3.7rem); font-weight: 850; letter-spacing: -.04em; margin-top: .35rem; }
+
+.cs-gallery-section { background: #fff; }
+.cs-gallery-shell { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.cs-gallery-main-wrap { position: relative; border-radius: var(--cs-radius); overflow: hidden; background: #ddd; }
+.cs-gallery-main { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: opacity .2s ease; }
+.cs-gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border: 0; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 2rem; line-height: 1; }
+.cs-gallery-prev { left: 1rem; }
+.cs-gallery-next { right: 1rem; }
+.cs-gallery-counter { position: absolute; right: 1rem; bottom: 1rem; background: rgba(0,0,0,.6); color: #fff; border-radius: 99px; padding: .35rem .75rem; font-size: .8rem; }
+.cs-gallery-thumbs { display: flex; gap: .75rem; overflow-x: auto; padding-bottom: .4rem; scrollbar-width: thin; }
+.cs-gallery-thumb { width: 120px; height: 78px; object-fit: cover; flex: 0 0 auto; border-radius: 12px; border: 3px solid transparent; cursor: pointer; opacity: .65; }
+.cs-gallery-thumb.is-active { border-color: var(--cs-dark); opacity: 1; }
+
+.cs-stats-section { background: var(--cs-bg); }
+.cs-stat-card { background: #fff; border: 1px solid var(--cs-line); border-radius: var(--cs-radius); padding: 1.5rem; min-height: 170px; }
+.cs-stat-card strong { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -.05em; }
+.cs-stat-card span { font-weight: 800; margin-left: .3rem; }
+.cs-stat-card small { display: block; color: var(--cs-muted); margin-top: .4rem; }
+.cs-feature-card { height: 100%; background: #fff; border-radius: 18px; padding: 1.5rem; border: 1px solid var(--cs-line); }
+.cs-feature-card b { font-size: 1.05rem; }
+.cs-feature-card p { color: var(--cs-muted); margin: .7rem 0 0; }
+
+.cs-video-section { background: var(--cs-dark); }
+.cs-video-frame { border-radius: var(--cs-radius); overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,.4); }
+.cs-video-frame iframe { border: 0; }
+
+.cs-similar-section { background: #fff; }
+.cs-similar-track { display: flex; gap: 1rem; overflow-x: auto; padding: .2rem .1rem 1rem; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.cs-car-card { flex: 0 0 min(340px, 82vw); background: #f7f7f5; border-radius: 20px; overflow: hidden; scroll-snap-align: start; border: 1px solid var(--cs-line); }
+.cs-car-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.cs-car-card small { color: var(--cs-muted); }
+.cs-car-card h3 { font-size: 1.3rem; margin: .45rem 0 .7rem; }
+.cs-car-card strong { font-size: 1.2rem; }
+
+.cs-dealer-section { background: var(--cs-bg); }
+.cs-dealer-shell { background: #fff; border-radius: var(--cs-radius); overflow: hidden; border: 1px solid var(--cs-line); }
+.cs-map-wrap { min-height: 520px; height: 100%; }
+.cs-map-wrap iframe { width: 100%; height: 100%; min-height: 520px; border: 0; }
+.cs-address { font-style: normal; line-height: 1.7; }
+.cs-address a { color: inherit; }
+
+.cs-social-section { background: #fff; }
+.cs-instagram-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.cs-instagram-grid a { overflow: hidden; border-radius: 14px; aspect-ratio: 1; }
+.cs-instagram-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.cs-instagram-grid a:hover img { transform: scale(1.06); }
+
+.cs-contact-section { background: var(--cs-bg); }
+.cs-contact-shell { border-radius: var(--cs-radius); overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,.12); }
+.cs-contact-intro { background: var(--cs-dark); }
+.cs-contact-intro .cs-eyebrow { color: var(--cs-accent); }
+.cs-contact-detail { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.12); }
+.cs-contact-detail span { display: block; color: rgba(255,255,255,.5); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
+.cs-contact-detail b { color: #fff; }
+.form-control, .form-select { min-height: 48px; border-radius: 12px; border-color: #d8d9da; }
+.form-control:focus, .form-select:focus { border-color: #111; box-shadow: 0 0 0 .2rem rgba(17,18,20,.08); }
+
+.cs-footer-section { background: var(--cs-dark); color: rgba(255,255,255,.55); font-size: .85rem; }
+
+.cs-scroll-top { position: fixed; right: 1rem; bottom: 1rem; z-index: 1000; width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--cs-dark); color: #fff; opacity: 0; visibility: hidden; transform: translateY(12px); transition: .25s ease; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+.cs-scroll-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+@media (max-width: 767.98px) {
+  .cs-hero-section { min-height: auto; }
+  .min-vh-75 { min-height: 80vh; }
+  .cs-price-card { margin-top: 1rem; }
+  .cs-gallery-thumb { width: 96px; height: 64px; }
+  .cs-map-wrap, .cs-map-wrap iframe { min-height: 380px; }
+  .cs-instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-gallery-arrow { width: 42px; height: 42px; }
+}
+
+
+/* Autoslider Clickable Cards */
+
+.cs-similar-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.cs-car-link {
+  display: block;
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cs-car-card {
+  /* keep your existing card styles */
+}

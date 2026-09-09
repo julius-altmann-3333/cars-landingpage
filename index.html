@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Premium car sales landing page with vehicle gallery, specifications, video, dealership details and contact form.">
+  <title>AutoHaus — Premium Vehicle Sales</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- ==================== NAVIGATION SECTION ==================== -->
+  <section id="cs-nav-section" class="cs-section cs-nav-section" data-cs-section="navigation">
+    <nav class="navbar navbar-dark navbar-expand-lg cs-navbar" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand cs-brand" href="#cs-hero-section">AUTO<span>HAUS</span></a>
+
+        <button class="navbar-toggler cs-menu-toggle" type="button"
+                data-bs-toggle="collapse" data-bs-target="#cs-main-menu"
+                aria-controls="cs-main-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="cs-main-menu" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#cs-hero-section" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-gallery-section" data-i18n="nav.gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-stats-section" data-i18n="nav.specs">Specs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-video-section" data-i18n="nav.video">Video</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-similar-section" data-i18n="nav.similar">Similar Cars</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-dealer-section" data-i18n="nav.dealer">Dealership</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cs-contact-section" data-i18n="nav.contact">Contact</a></li>
+            <li class="nav-item">
+              <button id="cs-language-toggle" class="btn btn-sm cs-language-btn" type="button" aria-label="Switch language">DE</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="cs-hero-section" class="cs-section cs-hero-section" data-cs-section="hero">
+    <div class="cs-hero-overlay"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center min-vh-75 py-5">
+        <div class="col-lg-7">
+          <span class="cs-eyebrow" data-i18n="hero.eyebrow">AVAILABLE NOW · PREMIUM CONDITION</span>
+          <h1 class="display-2 fw-bold text-white mt-3">2025 BMW <span>i5 M60</span></h1>
+          <p class="lead text-white-50 col-lg-10" data-i18n="hero.text">
+            Executive electric performance with all-wheel drive, premium comfort and a technology-first interior.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#cs-contact-section" class="btn btn-primary btn-lg px-4" data-i18n="hero.cta">Request a Test Drive</a>
+            <a href="#cs-gallery-section" class="btn btn-outline-light btn-lg px-4" data-i18n="hero.gallery">View Gallery</a>
+          </div>
+        </div>
+        <div class="col-lg-5 mt-5 mt-lg-0">
+          <div class="cs-price-card">
+            <small data-i18n="hero.priceLabel">ASKING PRICE</small>
+            <div class="cs-price">€79,900</div>
+            <div class="row g-2 mt-2">
+              <div class="col-6"><span>2025</span><small data-i18n="hero.year">Model year</small></div>
+              <div class="col-6"><span>12,480 km</span><small data-i18n="hero.mileage">Mileage</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY SECTION ==================== -->
+  <section id="cs-gallery-section" class="cs-section cs-gallery-section py-5" data-cs-section="gallery">
+    <div class="container">
+      <div class="cs-section-heading">
+        <span class="cs-eyebrow">01 · <span data-i18n="gallery.eyebrow">EXTERIOR & INTERIOR</span></span>
+        <h2 data-i18n="gallery.title">See it from every angle.</h2>
+      </div>
+
+      <div class="cs-gallery-shell">
+        <div class="cs-gallery-main-wrap">
+          <img id="cs-gallery-main" class="cs-gallery-main" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1800&q=85" alt="BMW performance sedan">
+          <button id="cs-gallery-prev" class="cs-gallery-arrow cs-gallery-prev" type="button" aria-label="Previous image">‹</button>
+          <button id="cs-gallery-next" class="cs-gallery-arrow cs-gallery-next" type="button" aria-label="Next image">›</button>
+          <div id="cs-gallery-counter" class="cs-gallery-counter">1 / 6</div>
+        </div>
+
+        <div id="cs-gallery-thumbs" class="cs-gallery-thumbs" role="list" aria-label="Vehicle image thumbnails"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS / FEATURES SECTION ==================== -->
+  <section id="cs-stats-section" class="cs-section cs-stats-section py-5" data-cs-section="stats">
+    <div class="container">
+      <div class="cs-section-heading text-center mx-auto">
+        <span class="cs-eyebrow">02 · <span data-i18n="stats.eyebrow">ENGINEERED TO PERFORM</span></span>
+        <h2 data-i18n="stats.title">Performance meets everyday luxury.</h2>
+      </div>
+
+      <div class="row g-3 mt-4">
+        <div class="col-6 col-lg-3">
+          <article class="cs-stat-card"><strong>601</strong><span>hp</span><small data-i18n="stats.power">Maximum power</small></article>
+        </div>
+        <div class="col-6 col-lg-3">
+          <article class="cs-stat-card"><strong>3.8</strong><span>s</span><small data-i18n="stats.accel">0–100 km/h</small></article>
+        </div>
+        <div class="col-6 col-lg-3">
+          <article class="cs-stat-card"><strong>516</strong><span>km</span><small data-i18n="stats.range">WLTP range</small></article>
+        </div>
+        <div class="col-6 col-lg-3">
+          <article class="cs-stat-card"><strong>230</strong><span>km/h</span><small data-i18n="stats.speed">Top speed</small></article>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4">
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>⚡ Dual-motor xDrive</b><p>Instant torque and intelligent all-wheel traction.</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>🛋 Premium comfort</b><p>Merino leather, heated seats and acoustic glazing.</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>🧠 Driving Assistant Pro</b><p>Advanced driver assistance for highway journeys.</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>🎵 Harman Kardon</b><p>Immersive premium sound with 17 speakers.</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>📱 Curved Display</b><p>BMW Operating System 8.5 with smartphone integration.</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="cs-feature-card"><b>🔋 DC fast charging</b><p>10–80% charging in approximately 30 minutes.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VIDEO SECTION ==================== -->
+  <section id="cs-video-section" class="cs-section cs-video-section py-5" data-cs-section="video">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 cs-video-frame">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                    title="Vehicle presentation video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <span class="cs-eyebrow">03 · <span data-i18n="video.eyebrow">WALKAROUND</span></span>
+          <h2 class="text-white mt-2" data-i18n="video.title">Experience the car before you arrive.</h2>
+          <p class="text-white-50" data-i18n="video.text">Explore the exterior, cockpit, storage and charging experience in a short visual presentation.</p>
+          <a href="#cs-contact-section" class="btn btn-primary mt-2" data-i18n="video.cta">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SIMILAR CARS SECTION ==================== -->
+  <section id="cs-similar-section" class="cs-section cs-similar-section py-5" data-cs-section="similar">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div class="cs-section-heading mb-0">
+          <span class="cs-eyebrow">04 · <span data-i18n="similar.eyebrow">MORE TO CONSIDER</span></span>
+          <h2 data-i18n="similar.title">Similar vehicles.</h2>
+        </div>
+        <div class="d-none d-md-flex gap-2">
+          <button class="btn btn-outline-dark cs-similar-control" data-direction="left" type="button">←</button>
+          <button class="btn btn-outline-dark cs-similar-control" data-direction="right" type="button">→</button>
+        </div>
+      </div>
+
+      <div id="cs-similar-track" class="cs-similar-track">
+        <article class="cs-car-card">
+          <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80" alt="Black sports sedan">
+          <div class="p-4"><small>2024 · 18,900 km</small><h3>BMW M340i xDrive</h3><strong>€64,900</strong></div>
+        </article>
+        <article class="cs-car-card">
+          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=900&q=80" alt="White luxury sedan">
+          <div class="p-4"><small>2025 · 9,200 km</small><h3>Audi S6 e-tron</h3><strong>€72,500</strong></div>
+        </article>
+        <article class="cs-car-card">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Silver sports car">
+          <div class="p-4"><small>2024 · 15,700 km</small><h3>Porsche Taycan 4S</h3><strong>€81,900</strong></div>
+        </article>
+        <article class="cs-car-card">
+          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80" alt="Red performance car">
+          <div class="p-4"><small>2025 · 7,400 km</small><h3>Mercedes-AMG EQE 53</h3><strong>€76,800</strong></div>
+        </article>
+        <article class="cs-car-card">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Modern performance car">
+          <div class="p-4"><small>2023 · 24,100 km</small><h3>BMW i4 M50</h3><strong>€57,900</strong></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DEALERSHIP SECTION ==================== -->
+  <section id="cs-dealer-section" class="cs-section cs-dealer-section py-5" data-cs-section="dealer">
+    <div class="container">
+      <div class="row g-0 cs-dealer-shell">
+        <div class="col-lg-6">
+          <div class="cs-map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=Prager+Strasse+2,+01069+Dresden,+Germany&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="AutoHaus dealership location"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6 p-4 p-lg-5">
+          <span class="cs-eyebrow">05 · <span data-i18n="dealer.eyebrow">VISIT OUR SHOWROOM</span></span>
+          <h2 class="mt-2" data-i18n="dealer.title">AutoHaus Dresden.</h2>
+          <p class="text-secondary" data-i18n="dealer.text">Come see the vehicle in person, take a guided test drive and speak with our sales team.</p>
+          <address class="cs-address mt-4">
+            <strong>AutoHaus Dresden</strong><br>
+            Prager Straße 2<br>
+            01069 Dresden, Germany<br><br>
+            <a href="tel:+493511234567">+49 351 123 4567</a><br>
+            <a href="mailto:sales@autohaus-demo.de">sales@autohaus-demo.de</a>
+          </address>
+          <a class="btn btn-dark mt-2" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Prager+Strasse+2,+01069+Dresden,+Germany"
+             data-i18n="dealer.directions">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL SECTION ==================== -->
+  <section id="cs-social-section" class="cs-section cs-social-section py-5" data-cs-section="social">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4">
+          <span class="cs-eyebrow">06 · SOCIAL</span>
+          <h2 data-i18n="social.title">Follow the showroom.</h2>
+          <p class="text-secondary" data-i18n="social.text">See fresh arrivals, delivery moments and behind-the-scenes content.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-dark" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-outline-dark" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn btn-outline-dark" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row g-2 cs-instagram-grid">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=600&q=80" alt="Instagram preview 1"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=600&q=80" alt="Instagram preview 2"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=600&q=80" alt="Instagram preview 3"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=600&q=80" alt="Instagram preview 4"></a>
+          </div>
+          <small class="text-secondary d-block mt-2">Preview tiles — connect the official Instagram API/widget for a live feed.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="cs-contact-section" class="cs-section cs-contact-section py-5" data-cs-section="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-9">
+          <div class="cs-contact-shell">
+            <div class="row g-0">
+              <div class="col-lg-5 cs-contact-intro p-4 p-lg-5">
+                <span class="cs-eyebrow">07 · <span data-i18n="contact.eyebrow">LET'S TALK</span></span>
+                <h2 class="text-white mt-2" data-i18n="contact.title">Ready for a closer look?</h2>
+                <p class="text-white-50" data-i18n="contact.text">Send an enquiry and our sales team will contact you about availability, financing and a test drive.</p>
+                <div class="mt-4">
+                  <div class="cs-contact-detail"><span>Vehicle</span><b>2025 BMW i5 M60</b></div>
+                  <div class="cs-contact-detail"><span>Sales</span><b>+49 351 123 4567</b></div>
+                </div>
+              </div>
+
+              <div class="col-lg-7 p-4 p-lg-5 bg-white">
+                <form id="cs-contact-form" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="cs-name" class="form-label">Full name *</label>
+                      <input id="cs-name" name="name" class="form-control" type="text" required>
+                      <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cs-email" class="form-label">Email *</label>
+                      <input id="cs-email" name="email" class="form-control" type="email" required>
+                      <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cs-phone" class="form-label">Phone</label>
+                      <input id="cs-phone" name="phone" class="form-control" type="tel">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cs-interest" class="form-label">I'm interested in</label>
+                      <select id="cs-interest" name="interest" class="form-select">
+                        <option>Test drive</option>
+                        <option>Vehicle availability</option>
+                        <option>Financing</option>
+                        <option>Trade-in</option>
+                        <option>General enquiry</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cs-date" class="form-label">Preferred date</label>
+                      <input id="cs-date" name="date" class="form-control" type="date">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="cs-time" class="form-label">Preferred time</label>
+                      <select id="cs-time" name="time" class="form-select">
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="cs-message" class="form-label">Message</label>
+                      <textarea id="cs-message" name="message" class="form-control" rows="4" placeholder="Tell us how we can help..."></textarea>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input id="cs-consent" name="consent" class="form-check-input" type="checkbox" required>
+                        <label class="form-check-label" for="cs-consent">I agree to be contacted about this enquiry. *</label>
+                        <div class="invalid-feedback">Please confirm your consent.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-dark btn-lg w-100" type="submit">Send Enquiry</button>
+                    </div>
+                    <div class="col-12">
+                      <div id="cs-form-status" class="alert d-none mb-0" role="status"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <p class="small text-secondary mt-3 mb-0">Demo form: after validation it prepares an email to the dealership address. For production, replace the recipient/handler in <code>js/contact-form.js</code> with your CRM or form endpoint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER SECTION ==================== -->
+  <section id="cs-footer-section" class="cs-section cs-footer-section py-4" data-cs-section="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© 2026 AutoHaus Dresden</span>
+      <span>Premium vehicles · Trusted service · Personal attention</span>
+    </div>
+  </section>
+
+  <button id="cs-scroll-top" class="cs-scroll-top" type="button" aria-label="Scroll to top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main-nav.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/similar-slider.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/language.js"></script>
+</body>
+</html>
